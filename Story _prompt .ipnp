@@ -1,0 +1,9 @@
+story_prompt=(f"Write a Short story(around 500-700 words) based on this scene description: {caption}")
+print(story_prompt)
+
+print("Sending this to Gemini. \n")
+
+response = client.models.generate_content(model=MODEL, contents=story_prompt)
+story=response.text
+print("\n----Generated Story----\n")
+print(story)
