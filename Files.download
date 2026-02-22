@@ -1,0 +1,5 @@
+with open("generated_story.txt","w")as f:
+  f.write(story)
+
+from google.colab import files
+files.download("generated_story.txt")
