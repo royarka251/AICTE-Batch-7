@@ -1,0 +1,12 @@
+prompt=input("Enter your Story prompt and press enter:\n")
+if prompt.strip()=="":
+  print("No prompt entered , Exiting.")
+else:
+  print(f"Generating story for prompt: {prompt}")
+  print("It may take few seconds")
+  try:
+    resp=client.models.generate_content(model=MODEL,contents=[prompt])
+    print("\n----Generated Story----\n")
+    print(resp.text)
+  except Exception as e:
+    print(f"Error occurred while generating story: {e}")
